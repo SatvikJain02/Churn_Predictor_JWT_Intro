@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # --- Configuration ---
-API_BASE_URL = "http://127.0.0.1:8000"  # Ensure your FastAPI is running here
+API_BASE_URL = "https://churn-predictor-jwt-intro-1.onrender.com"  # Ensure your FastAPI is running here
 
 # --- Session State Management ---
 if 'token' not in st.session_state:
@@ -140,4 +140,5 @@ elif menu == "Prediction":
                 if result['churn_prediction'] == 1:
                     st.error(f"⚠️ **Churn Detected** (Probability: {result['churn_probability']:.2f})")
                 else:
+
                     st.success(f"✅ **No Churn** (Probability: {result['churn_probability']:.2f})")
